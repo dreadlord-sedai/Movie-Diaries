@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# Movie Diaries
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Movie Diaries is a small React application for keeping a personal log of movies you've watched. Add movies, give them a star rating, and keep short notes. The app uses custom hooks and localStorage so your diary persists in the browser.
 
-## Available Scripts
+## Key features
 
-In the project directory, you can run:
+- Add movies with title, year and short notes
+- Rate movies with an interactive star rating component
+- Persisted locally using `localStorage` (no backend required)
+- Keyboard shortcuts (via `useKey`) and small reusable hooks
+- Small, component-focused codebase — easy to read and extend
 
-### `npm start`
+## Tech stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 19 (Create React App / `react-scripts`)
+- Vanilla CSS for styling
+- Custom React hooks: `useLocalStorageState`, `useMovies`, `useKey`
+- Testing libraries included in `package.json` (via Create React App)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project structure (important files)
 
-### `npm test`
+- `public/` — static HTML, manifest and other public assets
+- `src/` — application source
+  - `src/App.js` — main app container
+  - `src/index.js` — app entry
+  - `src/StarRating.js` — star rating component
+  - `src/useLocalStorageState.js` — hook for syncing state to localStorage
+  - `src/useMovies.js` — hook for movie list management
+  - `src/useKey.js` — hook for keyboard shortcuts
+  - `src/index.css` — app styles
+- `final/` — a packaged/alternate version (see `final/README.md` if present)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you're browsing the repo, you'll also find `App-v1.js`, `App-v2.js`, `App-v3.js` — these are earlier iterations kept for reference.
 
-### `npm run build`
+## Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (14+ recommended) and npm
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting started (development)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open a terminal in the project root (`d:/My Projects/Projects/movie-diaries`) and run:
 
-### `npm run eject`
+```powershell
+npm install
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This runs the app in development mode using Create React App's dev server. Open http://localhost:3000 in your browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Build for production
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To create an optimized production build, run:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```powershell
+npm run build
+```
 
-## Learn More
+After the build completes, the static files will be in the `build/` folder. To serve the production build locally you can run (no global installs required):
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```powershell
+npx serve -s build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Tests
 
-### Code Splitting
+Run the test runner with:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```powershell
+npm test
+```
 
-### Analyzing the Bundle Size
+(This project uses the testing setup bundled with Create React App.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## How to use the app
 
-### Making a Progressive Web App
+- Add a new movie using the form in the main UI.
+- Click the stars to set a rating (component lives at `src/StarRating.js`).
+- Notes and movies are saved automatically to localStorage via `useLocalStorageState`.
+- Use keyboard shortcuts (if present) to focus the add-form or navigate the list — the hook is `src/useKey.js`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Because the app stores data in your browser's localStorage, clearing site data or running in incognito/private mode may remove saved movies.
 
-### Advanced Configuration
+## Troubleshooting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- If the dev server doesn't start, check that no other process is using port 3000.
+- If changes don't appear, make sure you saved files and that the console doesn't show build errors.
+- If you see issues with localStorage (e.g., full or disabled), the app may not be able to persist movies; check browser settings.
 
-### Deployment
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Small, focused contributions are welcome. Recommended workflow:
 
-### `npm run build` fails to minify
+1. Fork or branch the repo.
+2. Add a descriptive commit and test manually in development mode.
+3. Open a pull request describing the change.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you plan larger changes (new persistence, authentication, or refactor to TypeScript), open an issue first to discuss the approach.
+
+## License
+
+No license file is included in this repository. Add a `LICENSE` file to indicate terms for reuse.
+
+## Contact / Questions
+
+If you want help extending the app, documenting specific components, or adding tests, open an issue or contact the repo owner.
+
+---
+
+Happy coding — enjoy tracking your movie diary!
