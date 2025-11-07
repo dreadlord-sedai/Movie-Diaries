@@ -107,5 +107,7 @@ function Star({ onRate, full, color, size, onHoverIn, onHoverOut }) {
         </svg>
       )}
     </span>
+
+    
   );
 }
