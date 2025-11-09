@@ -1,109 +1,153 @@
 # Movie Diaries
 
-Movie Diaries is a small React application for keeping a personal log of movies you've watched. Add movies, give them a star rating, and keep short notes. The app uses custom hooks and localStorage so your diary persists in the browser.
+![Movie Diaries App Screenshot](screenshot.png)
 
-## Key features
+## Table of Contents
 
-- Add movies with title, year and short notes
-- Rate movies with an interactive star rating component
-- Persisted locally using `localStorage` (no backend required)
-- Keyboard shortcuts (via `useKey`) and small reusable hooks
-- Small, component-focused codebase — easy to read and extend
+- [Movie Diaries](#movie-diaries)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Features](#features)
+  - [Technologies Used](#technologies-used)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Contact](#contact)
 
-## Tech stack
+## Introduction
 
-- React 19 (Create React App / `react-scripts`)
-- Vanilla CSS for styling
-- Custom React hooks: `useLocalStorageState`, `useMovies`, `useKey`
-- Testing libraries included in `package.json` (via Create React App)
+Movie Diaries is a personal movie tracking application built with React. It helps you maintain a digital diary of movies you've watched, complete with ratings and personal notes. The app uses modern React features and custom hooks for state management and local storage persistence, making it a perfect tool for movie enthusiasts who want to keep track of their viewing history.
 
-## Project structure (important files)
+## Features
 
-- `public/` — static HTML, manifest and other public assets
-- `src/` — application source
-  - `src/App.js` — main app container
-  - `src/index.js` — app entry
-  - `src/StarRating.js` — star rating component
-  - `src/useLocalStorageState.js` — hook for syncing state to localStorage
-  - `src/useMovies.js` — hook for movie list management
-  - `src/useKey.js` — hook for keyboard shortcuts
-  - `src/index.css` — app styles
-- `final/` — a packaged/alternate version (see `final/README.md` if present)
+- Add movies with title, release year, and personal notes
+- Rate movies using an interactive star rating system
+- Persistent storage using browser's localStorage
+- Keyboard shortcuts for quick navigation and data entry
+- Responsive design that works on both desktop and mobile
+- Clean, intuitive user interface
+- Custom React hooks for state management and keyboard interactions
 
-If you're browsing the repo, you'll also find `App-v1.js`, `App-v2.js`, `App-v3.js` — these are earlier iterations kept for reference.
+## Technologies Used
 
-## Prerequisites
+- **React**: Modern React (v19) with hooks for component architecture and state management
+- **CSS3**: Pure CSS with modern features for styling and responsiveness
+- **JavaScript (ES6+)**: Modern JavaScript for app logic and custom hooks
+- **LocalStorage API**: Browser's built-in storage for data persistence
+- **Create React App**: Development and build tooling
 
-- Node.js (14+ recommended) and npm
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="40" height="40"/>
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3" width="40" height="40"/>
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40"/>
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40"/>
+</p>
 
-## Getting started (development)
+## Installation
 
-Open a terminal in the project root (`d:/My Projects/Projects/movie-diaries`) and run:
+To get started with Movie Diaries, follow these steps:
 
-```powershell
-npm install
-npm start
-```
+1. **Clone the repository**:
 
-This runs the app in development mode using Create React App's dev server. Open http://localhost:3000 in your browser.
+   ```sh
+   git clone https://github.com/dreadlord-sedai/Movie-Diaries.git
+   ```
 
-## Build for production
+2. **Navigate to the project directory**:
 
-To create an optimized production build, run:
+   ```sh
+   cd Movie-Diaries
+   ```
 
-```powershell
-npm run build
-```
+3. **Install dependencies**:
 
-After the build completes, the static files will be in the `build/` folder. To serve the production build locally you can run (no global installs required):
+   ```sh
+   npm install
+   ```
 
-```powershell
-npx serve -s build
-```
+4. **Start the development server**:
+   ```sh
+   npm start
+   ```
 
-## Tests
+The app will open in your default browser at `http://localhost:3000`.
 
-Run the test runner with:
+## Usage
 
-```powershell
-npm test
-```
+1. **Adding a Movie**:
 
-(This project uses the testing setup bundled with Create React App.)
+   - Click the "Add Movie" button or use the form at the top
+   - Enter the movie title, year, and any personal notes
+   - Use the star rating component to rate the movie
 
-## How to use the app
+2. **Rating Movies**:
 
-- Add a new movie using the form in the main UI.
-- Click the stars to set a rating (component lives at `src/StarRating.js`).
-- Notes and movies are saved automatically to localStorage via `useLocalStorageState`.
-- Use keyboard shortcuts (if present) to focus the add-form or navigate the list — the hook is `src/useKey.js`.
+   - Click on the stars to set your rating
+   - Ratings are automatically saved
 
-Because the app stores data in your browser's localStorage, clearing site data or running in incognito/private mode may remove saved movies.
+3. **Managing Your List**:
 
-## Troubleshooting
+   - All entries are automatically saved to localStorage
+   - Use keyboard shortcuts to navigate through your list
+   - Edit or delete entries as needed
 
-- If the dev server doesn't start, check that no other process is using port 3000.
-- If changes don't appear, make sure you saved files and that the console doesn't show build errors.
-- If you see issues with localStorage (e.g., full or disabled), the app may not be able to persist movies; check browser settings.
+4. **Building for Production**:
+   ```sh
+   npm run build
+   npx serve -s build
+   ```
 
 ## Contributing
 
-Small, focused contributions are welcome. Recommended workflow:
+We welcome contributions! Here's how you can help:
 
-1. Fork or branch the repo.
-2. Add a descriptive commit and test manually in development mode.
-3. Open a pull request describing the change.
+1. Fork the repository
+2. Create your feature branch:
+   ```sh
+   git checkout -b feature/amazing-feature
+   ```
+3. Make your changes and commit them:
+   ```sh
+   git commit -m 'Add some amazing feature'
+   ```
+4. Push to the branch:
+   ```sh
+   git push origin feature/amazing-feature
+   ```
+5. Open a pull request
 
-If you plan larger changes (new persistence, authentication, or refactor to TypeScript), open an issue first to discuss the approach.
+For major changes:
+
+- Open an issue first to discuss what you would like to change
+- Ensure tests pass and add new ones for your features
+- Update documentation as needed
 
 ## License
 
-No license file is included in this repository. Add a `LICENSE` file to indicate terms for reuse.
+This project is currently unlicensed. Please contact the repository owner for usage permissions.
 
-## Contact / Questions
+## Contact
 
-If you want help extending the app, documenting specific components, or adding tests, open an issue or contact the repo owner.
+For questions, feedback, or collaboration:
+
+- **Created by**: Dahami Fabio
+- **Email**: [dahamifabbio@gmail.com](mailto:dahamifabbio@gmail.com)
+- **GitHub**: [dreadlord_sedai](https://github.com/dreadlord-sedai)
 
 ---
 
-Happy coding — enjoy tracking your movie diary!
+Project Structure:
+
+```
+movie-diaries/
+├── src/
+│   ├── App.js           # Main application component
+│   ├── StarRating.js    # Reusable star rating component
+│   ├── useKey.js        # Keyboard shortcuts hook
+│   ├── useMovies.js     # Movie management hook
+│   ├── useLocalStorageState.js # Persistence hook
+│   └── index.js         # Application entry point
+└── public/
+    └── index.html       # HTML template
+```
