@@ -1,10 +1,13 @@
 # Movie Diaries
 
-![Movie Diaries App Screenshot](s1.png)
+# Movie Diaries
+
+![Movie Diaries App Screenshot](screenshots/s1.png)
 
 ## Table of Contents
 
 - [Movie Diaries](#movie-diaries)
+- [Movie Diaries](#movie-diaries-1)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Features](#features)
