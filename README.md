@@ -1,6 +1,6 @@
 # Movie Diaries
 
-![Movie Diaries App Screenshot](screenshot.png)
+![Movie Diaries App Screenshot](s1.png)
 
 ## Table of Contents
 
@@ -142,12 +142,31 @@ Project Structure:
 ```
 movie-diaries/
 ├── src/
-│   ├── App.js           # Main application component
-│   ├── StarRating.js    # Reusable star rating component
-│   ├── useKey.js        # Keyboard shortcuts hook
-│   ├── useMovies.js     # Movie management hook
-│   ├── useLocalStorageState.js # Persistence hook
-│   └── index.js         # Application entry point
+│   ├── components/      # React components
+│   │   ├── Box.js
+│   │   ├── ErrorMessage.js
+│   │   ├── Loader.js
+│   │   ├── Logo.js
+│   │   ├── Main.js
+│   │   ├── Movie.js
+│   │   ├── MovieDetails.js
+│   │   ├── MovieList.js
+│   │   ├── NavBar.js
+│   │   ├── NumResults.js
+│   │   ├── WatchedMovie.js
+│   │   ├── WatchedMovieList.js
+│   │   └── WatchedSummary.js
+│   ├── hooks/          # Custom React hooks
+│   │   ├── useKey.js
+│   │   ├── useLocalStorageState.js
+│   │   └── useMovies.js
+│   ├── App-v1.js       # App iterations
+│   ├── App-v2.js
+│   ├── App.js          # Main application component
+│   ├── StarRating.js   # Star rating component
+│   ├── index.css       # Global styles
+│   └── index.js        # Application entry point
 └── public/
-    └── index.html       # HTML template
+    ├── index.html      # HTML template
+    └── robots.txt      # SEO configuration
 ```
